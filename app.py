@@ -2,6 +2,8 @@ import csv
 import useful_tools
 from Employee import Employee
 from Question import Question
+from Chef import Chef
+from FrenchChef import FrenchChef
 
 ## Practicing the basics
 ## Thanks to freecodecamp.com
@@ -181,6 +183,7 @@ from Question import Question
 #     "Holt",
 #     "2020/01/01",
 #     "99th Precinct",
+#     "Captain",
 #     True
 # )
 # employee2 = Employee(
@@ -188,32 +191,45 @@ from Question import Question
 #     "Peralta",
 #     "2019/01/01",
 #     "99th Precinct",
+#     "Detective",
 #     True
 # )
 
-# print(employee1.first_name + " " + employee1.last_name)
+# # print(employee1.first_name + " " + employee1.last_name)
+# print("Is " + employee1.first_name + " a captain?")
+# print(employee1.is_captain())
 
 
 ## Multiple Choice Quiz
-question_prompts = [
-    "What colour are apples?\n(a) Red/Green\n(b) Purple\n(c) Orange\n\n",
-    "What colour are strawberries?\n(a) Blue\n(b) Green\n(c) Red\n\n",
-    "What colour are pineapples?\n(a) Pink\n(b) Yellow/Green\n(c) White\n\n",
-]
+# question_prompts = [
+#     "What colour are apples?\n(a) Red/Green\n(b) Purple\n(c) Orange\n\n",
+#     "What colour are strawberries?\n(a) Blue\n(b) Green\n(c) Red\n\n",
+#     "What colour are pineapples?\n(a) Pink\n(b) Yellow/Green\n(c) White\n\n",
+# ]
 
-questions = [
-    Question(question_prompts[0], "a"),
-    Question(question_prompts[1], "c"),
-    Question(question_prompts[2], "b"),
-]
+# questions = [
+#     Question(question_prompts[0], "a"),
+#     Question(question_prompts[1], "c"),
+#     Question(question_prompts[2], "b"),
+# ]
 
 
-def run_test(questions):
-    score = 0
-    for question in questions:
-        response = input(question.prompt)
-        if response == question.answer.lower():
-            score += 1
-    print("You got " + str(score) + "/" + str(len(questions)) + " correct")
+# def run_test(questions):
+#     score = 0
+#     for question in questions:
+#         response = input(question.prompt)
+#         if response == question.answer.lower():
+#             score += 1
+#     print("You got " + str(score) + "/" + str(len(questions)) + " correct")
 
-run_test(questions)
+# run_test(questions)
+
+
+## Inheritance
+myChef = Chef()
+myChef.make_dessert()
+
+myFrenchChef = FrenchChef()
+myFrenchChef.make_dessert()
+myFrenchChef.make_chicken()
+myFrenchChef.make_bread()
